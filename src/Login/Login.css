@@ -1,0 +1,307 @@
+div.layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 750px;
+    background-color: white;
+    direction: rtl;
+    transition: all .5s;
+    font-family: "vazir", tahoma;
+}
+
+form {
+    height: 500px;
+    border: 1px solid black;
+    padding: 30px;
+    width: 40%;
+    border-radius: 5px;
+    box-shadow: 0 0 8px #0044ff;
+    position: relative;
+    transition: all .5s;
+    background: rgba(255, 255, 255, 0.709);
+}
+
+form>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.input-container {
+    height: 50%;
+}
+
+div.remmember-me-box {
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+
+div.btns {
+    height: 40%;
+}
+
+/* ---------inputs--------- */
+div.input-box {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 10px 0;
+    transition: all .5s;
+}
+
+div.input-box:focus-within {
+    margin-top: 40px;
+}
+
+input {
+    width: 100%;
+    padding: 15px 100px 15px 15px;
+    font-size: large;
+    outline: none;
+    transition: all .5s;
+    border: 1px solid rgba(0, 140, 255, 0.685);
+    color: rgb(0, 68, 255);
+    font-family: inherit;
+}
+
+label:not(.input-error) {
+    transition: all .5s;
+}
+
+input:focus-visible:not(input[type="checkbox"]) {
+    box-shadow: 0 0 4px rgb(0, 140, 255), inset 0 0 4px rgb(0, 140, 255);
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid black;
+}
+
+input:focus-visible+label:not([for="remmember-me"]) {
+    color: rgb(0, 68, 255);
+    top: -30px;
+    font-size: large;
+}
+
+input+label:not([for="remmember-me"]) {
+    position: absolute;
+    font-weight: bold;
+    right: 10px;
+    top: 27px;
+}
+
+label.input-error {
+    position: absolute;
+    background-color: white;
+    color: red;
+    bottom: -2px;
+    left: 20px;
+    padding: 0 3px;
+}
+
+label.error {
+    color: red;
+    margin-right: 10px ;
+}
+
+img.icon {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 10px;
+    top: 24px;
+    transition: all .5s;
+}
+
+img.eye {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 50px;
+    top: 24px;
+    transform: scale(0);
+    transition: all .5s;
+    cursor: pointer;
+}
+
+input:focus-visible~label>img.eye {
+    transform: scale(1);
+}
+
+#captcha {
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    top: 22px;
+    left: 10px;
+}
+
+img.refresh {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 100px;
+    top: 26px;
+    transition: all .3s;
+}
+
+img[src*="refresh"]:hover {
+    transform: scale(1.2);
+    filter: invert(51%) sepia(61%) saturate(495%) hue-rotate(170deg) brightness(99%) contrast(104%);
+}
+
+input:focus-visible~label img:not(img[src*="refresh"], img[src*="code"]) {
+    filter: invert(51%) sepia(61%) saturate(495%) hue-rotate(170deg) brightness(99%) contrast(104%);
+}
+
+/* ---------inputs--------- */
+
+/* --------buttons------- */
+input[type="checkbox"] {
+    height: 17px;
+    width: 17px;
+    margin-left: 10px;
+}
+
+div.btns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+button {
+    font-family: "vazir", tahoma;
+    font-weight: bold;
+    font-size: large;
+    padding: 20px;
+    flex: 1;
+    margin: 0px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .5s;
+    white-space: nowrap;
+}
+
+button:hover {
+    box-shadow: 0 0 10px rgb(0, 140, 255);
+}
+
+div.btns a.sign-up {
+    font-style: italic;
+    text-decoration: none;
+    color: rgb(0, 140, 255);
+    font-weight: bold;
+    font-size: large;
+}
+
+a span {
+    text-decoration: underline;
+    color: rgb(25, 0, 255);
+    white-space: nowrap;
+}
+
+.btn1 {
+    border: 2px solid rgb(0, 68, 255);
+    background-color: rgb(0, 68, 255);
+    color: white;
+}
+
+.btn2 {
+    border: 2px solid rgb(0, 68, 255);
+    background-color: white;
+    color: rgb(0, 68, 255);
+}
+
+button#svg1,
+#svg2 {
+    height: 60px;
+    padding: 10px;
+    margin: 0;
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    background-color: rgb(224, 224, 224);
+    border: none;
+    border-radius: 30px;
+}
+
+button#svg1:hover {
+    background-color: #3a394d;
+}
+
+button#svg2 {
+    display: none;
+    background-color: #3a394d;
+}
+
+button#svg2:hover {
+    background-color: rgb(224, 224, 224);
+}
+
+svg {
+    width: 40px;
+    height: 40px;
+}
+
+svg#sun {
+    color: #3a394d;
+}
+
+svg#moon {
+    color: rgb(224, 224, 224);
+}
+
+button#svg1:hover svg#sun {
+    color: rgb(224, 224, 224);
+}
+
+button#svg2:hover svg#moon {
+    color: #3a394d;
+}
+
+div#time {
+    position: absolute;
+    top: -70px;
+    direction: ltr;
+}
+
+
+/* --------buttons------- */
+
+/* -------------Mobile---------- */
+@media(max-width:700px) {
+    form {
+        width: 90%;
+        padding: 30px 10px;
+    }
+
+    a.sign-up {
+        font-size: medium !important;
+    }
+
+    img[src*="code"] {
+        width: 60px;
+        height: 30px;
+        top: 26px;
+        left: 5px;
+    }
+
+    img[src*="refresh"] {
+        left: 62px;
+        width: 25px;
+        height: 25px;
+    }
+
+    button#svg1,
+    #svg2 {
+        height: 45px;
+    }
+
+    svg {
+        width: 25px;
+        height: 25px;
+    }
+}
